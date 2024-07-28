@@ -29,3 +29,28 @@ Foreign Keys for each table:
 #### Leanring outcomes for a course can change. You'll want to track if a learning outcome is currently active or not.  
 
 There are specific tables for learning outcomes, courses and instructors that contain infromation for each.  In those three tables thre is a boolean column titled active that is either TRUE or FALSE. Active LOs, courses and instructors have TRUE while not active have FALSE.
+
+### 5) Is there anything to normalize in the database, and if so, how will you normalize it? Recall the desire to eliminate redundancy.  
+To reduce redundancy, specific data about the instructors and courses are stored in seperate tables. This ensures details like learning outcomes, active status, and descriptions are not repeatedly shared within a single table. Primary and foreign keys are used correctly, with all non-key columns being fullyt dependent on the primary key. Tdditionally,courses offered multiple times per a term are normalized by assigning each course a unique row with the instructor being the differentiating factor.
+
+### 6) Are there indexes you should build? Explain yuor reasoning?
+Yes, I created 4 indexes for each table.  
+- **course_id**: Uniquely identifies each course and is referenced in other tables, allowing for effcient lookups and joins.  
+- **instructor_id**: Uniquely identifies each instructor and is used as a foreign key in other tables in place of instructor name.
+- **outcome_id**: Uniquely identifies each learning outcome, without it, the way toi distingush rows is wqith course_iud and LO itself which is a long string.
+- **assignment_id**: Uniquely identifies each course assignment, without it, multiple columns would be referenced as course_id, term and instruictor_id.
+
+### 7) Are there constrains to enforce? Explain your answer and strategy.
+ - Valid course IDs: ensure learning outcomes reference valid course IDs that offered by the School fo Data Science.
+ - Not Null: ensure all columns are populated with valid data
+ - Unique Constraints: Ensure that each course and instructor combination is unique within each term to prevent duplicate assignments.
+ - Foregin Key Constraint: Ensure that foreign keys reference valid entries in tables. Prevents invalid course or instructor assignments.
+ - Valid data Constraint: Ensure that instructors and courses are working for or offered by the School of Data Science.  
+
+ ### 8) Draw and submit a Relational Model for your project.  
+Please see the diagram below which is also labeled database design.
+![Database Design](database_design.png)
+
+ ### 9) Suppose you were asked if your database could also support the UVA SDS Residential MSDS Program. Explain any issues that might arise, changes to the databse structure (schema), and new data that might be needed. Note you won't acually need to support this use case for the project.  
+ Since the courses are the same for the Residential program and the Online program, the courses and learning outcome tables wouldn't need to be changed. The Course_Assigned table would need an additional column titled delivery_mode to differentiate courses that were taken ONLINE or IN-PERSON. This column would require new data to know which instructors were teaching the IN-PERSON and ONLINE courses for each term.  
+ Additionally, a new column can be added to the Instructors table for REMOTE and ON-SITE instructors. This would also introduce an additional constraint of a REMOTE instructor not being assigned an IN-PERSON course. Data would need to be collected on wether the instructor is remote or not.
