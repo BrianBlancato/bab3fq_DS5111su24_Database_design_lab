@@ -100,7 +100,7 @@ outcome_id,course_id,learning_outcome,active
 1099,105,Understand the concepts behind Hive.,TRUE
 1100,105,Have some familiarity with running PySpark in a Databricks notebook,TRUE
 1101,105,"Understand how EC2 and S3 are used for computing and storage, respectively",TRUE
-1102,105,Demonstrate the steps for configuring and launching an AWS EC2 instance,TRUE
+1102,105,Demonstrate the steps for configuring and launching an AWS EC2 instance,TRUE
 1103,105,Understand the capabilities of Amazon Glue and Athena,TRUE
 1104,105,Understand the concepts and use cases behind Apache Kafka,TRUE
 1105,105,Create and configure an Amazon S3 bucket,TRUE
