@@ -107,7 +107,7 @@ outcome_id,course_id,learning_outcome,active
 1106,105,Apply the concepts behind streaming systems,TRUE
 1107,105,Execute the Spark Streaming library,TRUE
 1108,105,Compute analytics using Spark Streaming,TRUE
-1109,105,Explain the properties of data lakes and data lakehouses,TRUE
+1109,105,Explain the properties of data lakes and data lakehouses,TRUE
 1110,105,"Explain the shortcomings of data lakes, and how data lakehouses address these shortcomings",TRUE
 1111,105,"Work with Apache Delta lakes to implement their salient features (create, delete, update, conditional update, time travel)",TRUE
 1112,105,Implement GraphX and GraphFrames in Spark,TRUE
