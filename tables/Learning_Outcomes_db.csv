@@ -151,7 +151,7 @@ outcome_id,course_id,learning_outcome,active
 1150,110,Use K-Means clustering to explore new data in R,TRUE
 1151,110,Use hierarchical clustering to create and evaluate clusters in R,TRUE
 1152,111,Probability review,TRUE
-1153,111,Use the elements of Bayes theorem in problem solving,TRUE
+1153,111,Use the elements of Bayes theorem in problem solving,TRUE
 1154,111,Use univariate conjugate priors to analytically obtain the posterior distribution,TRUE
 1155,111,Use multivariate conjugate priors to analytically obtain the posterior distribution,TRUE
 1156,111,Use non-informative priors to analytically obtain the posterior distribution,TRUE
